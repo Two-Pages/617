@@ -1,0 +1,3 @@
+C:\Users\lyq\source\repos\Homework5\obj\Debug\Homework5.csproj.AssemblyReference.cache
+C:\Users\lyq\source\repos\Homework5\obj\Debug\Homework5.csproj.SuggestedBindingRedirects.cache
+C:\Users\lyq\source\repos\Homework5\obj\Debug\Homework5.csproj.CoreCompileInputs.cache
