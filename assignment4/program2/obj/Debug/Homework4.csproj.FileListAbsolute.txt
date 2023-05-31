@@ -1,0 +1,8 @@
+C:\Users\lyq\source\repos\Homework4\bin\Debug\Homework4.exe.config
+C:\Users\lyq\source\repos\Homework4\bin\Debug\Homework4.exe
+C:\Users\lyq\source\repos\Homework4\bin\Debug\Homework4.pdb
+C:\Users\lyq\source\repos\Homework4\obj\Debug\Homework4.csproj.AssemblyReference.cache
+C:\Users\lyq\source\repos\Homework4\obj\Debug\Homework4.csproj.SuggestedBindingRedirects.cache
+C:\Users\lyq\source\repos\Homework4\obj\Debug\Homework4.csproj.CoreCompileInputs.cache
+C:\Users\lyq\source\repos\Homework4\obj\Debug\Homework4.exe
+C:\Users\lyq\source\repos\Homework4\obj\Debug\Homework4.pdb
