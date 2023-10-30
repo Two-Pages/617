@@ -1,0 +1,33 @@
+public class MiniApplicationContext {
+    private Map<String, Object> beans = new HashMap<>();
+
+    public MiniApplicationContext(String location) throws Exception {
+        InputStream is = new FileInputStream(location);
+        Document document = DocumentBuilderFactory.newInstance().newDocumentBuilder().parse(is);
+        NodeList beanList = document.getElementsByTagName("bean");
+        for (int i = 0; i < beanList.getLength(); i++) {
+            Node node = beanList.item(i);
+            NamedNodeMap namedNodeMap = node.getAttributes();
+            String id = namedNodeMap.getNamedItem("id").getNodeValue();
+            String className = namedNodeMap.getNamedItem("class").getNodeValue();
+            Class<?> clazz = Class.forName(className);
+            Object object = clazz.newInstance();
+            beans.put(id, object);
+            NodeList propertyList = node.getChildNodes();
+            for (int j = 0; j < propertyList.getLength(); j++) {
+                Node propertyNode = propertyList.item(j);
+                if (propertyNode instanceof Element) {
+                    String name = propertyNode.getAttributes().getNamedItem("name").getNodeValue();
+                    String value = propertyNode.getAttributes().getNamedItem("value").getNodeValue();
+                    String methodName = "set" + name.substring(0, 1).toUpperCase() + name.substring(1);
+                    Method method = clazz.getMethod(methodName, String.class);
+                    method.invoke(object, value);
+                }
+            }
+        }
+    }
+
+    public Object getBean(String name) {
+        return beans.get(name);
+    }
+}
